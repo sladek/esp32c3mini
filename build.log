@@ -1,0 +1,2593 @@
+   Compiling nb v1.1.0
+   Compiling void v1.0.2
+   Compiling bit_field v0.10.2
+   Compiling bare-metal v1.0.0
+   Compiling r0 v1.0.0
+   Compiling bytemuck v1.13.1
+   Compiling critical-section v1.1.1
+   Compiling vcell v0.1.3
+error[E0463]: can't find crate for `core`
+  |
+  = note: the `riscv32imc-unknown-none-elf` target may not be installed
+  = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+  = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `compiler_builtins`
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/nb-1.1.0/src/lib.rs:192:5
+    |
+192 | use core::fmt;
+    |     ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error: cannot find attribute `derive` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/nb-1.1.0/src/lib.rs:201:3
+    |
+201 | #[derive(Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
+    |   ^^^^^^
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/nb-1.1.0/src/lib.rs:195:27
+    |
+195 | pub type Result<T, E> = ::core::result::Result<T, Error<E>>;
+    |                           ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/r0-1.0.0/src/lib.rs:76:5
+   |
+76 | use core::{mem, ptr};
+   |     ^^^^ can't find crate
+   |
+   = note: the `riscv32imc-unknown-none-elf` target may not be installed
+   = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+   = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0405]: cannot find trait `FnOnce` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/nb-1.1.0/src/lib.rs:239:12
+    |
+239 |         F: FnOnce(E) -> T,
+    |            ^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `From` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/nb-1.1.0/src/lib.rs:248:9
+    |
+248 | impl<E> From<E> for Error<E> {
+    |         ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/r0-1.0.0/src/lib.rs:94:41
+   |
+94 | pub unsafe trait Word: sealed::Sealed + Copy {}
+   |                                         ^^^^ not found in this scope
+
+Some errors have detailed explanations: E0405, E0463.
+For more information about an error, try `rustc --explain E0405`.
+error: could not compile `nb` (lib) due to 7 previous errors
+warning: build failed, waiting for other jobs to finish...
+error: cannot find macro `assert` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bit_field-0.10.2/src/lib.rs:217:17
+    |
+217 |                 assert!(bit < Self::BIT_LENGTH);
+    |                 ^^^^^^
+...
+277 | bitfield_numeric_impl! { u8 u16 u32 u64 u128 usize i8 i16 i32 i64 i128 isize }
+    | ------------------------------------------------------------------------------ in this macro invocation
+    |
+    = note: this error originates in the macro `bitfield_numeric_impl` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error: cannot find macro `assert` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bit_field-0.10.2/src/lib.rs:227:17
+    |
+227 |                 assert!(range.start < Self::BIT_LENGTH);
+    |                 ^^^^^^
+...
+277 | bitfield_numeric_impl! { u8 u16 u32 u64 u128 usize i8 i16 i32 i64 i128 isize }
+    | ------------------------------------------------------------------------------ in this macro invocation
+    |
+    = note: this error originates in the macro `bitfield_numeric_impl` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error: cannot find macro `assert` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bit_field-0.10.2/src/lib.rs:228:17
+    |
+228 |                 assert!(range.end <= Self::BIT_LENGTH);
+    |                 ^^^^^^
+...
+277 | bitfield_numeric_impl! { u8 u16 u32 u64 u128 usize i8 i16 i32 i64 i128 isize }
+    | ------------------------------------------------------------------------------ in this macro invocation
+    |
+    = note: this error originates in the macro `bitfield_numeric_impl` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error: cannot find macro `assert` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bit_field-0.10.2/src/lib.rs:229:17
+    |
+229 |                 assert!(range.start < range.end);
+    |                 ^^^^^^
+...
+277 | bitfield_numeric_impl! { u8 u16 u32 u64 u128 usize i8 i16 i32 i64 i128 isize }
+    | ------------------------------------------------------------------------------ in this macro invocation
+    |
+    = note: this error originates in the macro `bitfield_numeric_impl` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error: cannot find macro `assert` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bit_field-0.10.2/src/lib.rs:241:17
+    |
+241 |                 assert!(bit < Self::BIT_LENGTH);
+    |                 ^^^^^^
+...
+277 | bitfield_numeric_impl! { u8 u16 u32 u64 u128 usize i8 i16 i32 i64 i128 isize }
+    | ------------------------------------------------------------------------------ in this macro invocation
+    |
+    = note: this error originates in the macro `bitfield_numeric_impl` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error: cannot find macro `assert` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bit_field-0.10.2/src/lib.rs:257:17
+    |
+257 |                 assert!(range.start < Self::BIT_LENGTH);
+    |                 ^^^^^^
+...
+277 | bitfield_numeric_impl! { u8 u16 u32 u64 u128 usize i8 i16 i32 i64 i128 isize }
+    | ------------------------------------------------------------------------------ in this macro invocation
+    |
+    = note: this error originates in the macro `bitfield_numeric_impl` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error: cannot find macro `assert` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bit_field-0.10.2/src/lib.rs:258:17
+    |
+258 |                 assert!(range.end <= Self::BIT_LENGTH);
+    |                 ^^^^^^
+...
+277 | bitfield_numeric_impl! { u8 u16 u32 u64 u128 usize i8 i16 i32 i64 i128 isize }
+    | ------------------------------------------------------------------------------ in this macro invocation
+    |
+    = note: this error originates in the macro `bitfield_numeric_impl` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error: could not compile `r0` (lib) due to 4 previous errors
+error: cannot find macro `assert` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bit_field-0.10.2/src/lib.rs:259:17
+    |
+259 |                 assert!(range.start < range.end);
+    |                 ^^^^^^
+...
+277 | bitfield_numeric_impl! { u8 u16 u32 u64 u128 usize i8 i16 i32 i64 i128 isize }
+    | ------------------------------------------------------------------------------ in this macro invocation
+    |
+    = note: this error originates in the macro `bitfield_numeric_impl` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error: cannot find macro `assert` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bit_field-0.10.2/src/lib.rs:260:17
+    |
+260 |                 assert!(value << (Self::BIT_LENGTH - (range.end - range.start)) >>
+    |                 ^^^^^^
+...
+277 | bitfield_numeric_impl! { u8 u16 u32 u64 u128 usize i8 i16 i32 i64 i128 isize }
+    | ------------------------------------------------------------------------------ in this macro invocation
+    |
+    = note: this error originates in the macro `bitfield_numeric_impl` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error: cannot find macro `assert` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bit_field-0.10.2/src/lib.rs:298:9
+    |
+298 |         assert!(range.len() <= T::BIT_LENGTH);
+    |         ^^^^^^
+
+error: cannot find macro `assert` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bit_field-0.10.2/src/lib.rs:306:9
+    |
+306 |         assert!(slice_end - slice_start <= 1);
+    |         ^^^^^^
+
+error: cannot find macro `assert` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bit_field-0.10.2/src/lib.rs:335:9
+    |
+335 |         assert!(range.len() <= T::BIT_LENGTH);
+    |         ^^^^^^
+
+error: cannot find macro `assert` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bit_field-0.10.2/src/lib.rs:342:9
+    |
+342 |         assert!(slice_end - slice_start <= 1);
+    |         ^^^^^^
+
+error: cannot find attribute `derive` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bare-metal-1.0.0/src/lib.rs:50:3
+   |
+50 | #[derive(Debug)]
+   |   ^^^^^^
+
+error: cannot find attribute `derive` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bare-metal-1.0.0/src/lib.rs:15:3
+   |
+15 | #[derive(Clone, Copy, Debug)]
+   |   ^^^^^^
+
+error[E0463]: can't find crate for `core`
+ --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/critical-section-1.1.1/src/mutex.rs:2:5
+  |
+2 | use core::cell::{Ref, RefCell, RefMut, UnsafeCell};
+  |     ^^^^ can't find crate
+  |
+  = note: the `riscv32imc-unknown-none-elf` target may not be installed
+  = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+  = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0405]: cannot find trait `Sync` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bare-metal-1.0.0/src/lib.rs:87:16
+   |
+87 | unsafe impl<T> Sync for Mutex<T> where T: Send {}
+   |                ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Send` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bare-metal-1.0.0/src/lib.rs:87:43
+   |
+87 | unsafe impl<T> Sync for Mutex<T> where T: Send {}
+   |                                           ^^^^ not found in this scope
+
+error[E0463]: can't find crate for `core`
+ --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/critical-section-1.1.1/src/lib.rs:8:5
+  |
+8 | use core::marker::PhantomData;
+  |     ^^^^ can't find crate
+  |
+  = note: the `riscv32imc-unknown-none-elf` target may not be installed
+  = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+  = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error: cannot find attribute `derive` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/critical-section-1.1.1/src/lib.rs:121:3
+    |
+121 | #[derive(Clone, Copy, Debug)]
+    |   ^^^^^^
+
+error: cannot find attribute `derive` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/critical-section-1.1.1/src/lib.rs:16:3
+   |
+16 | #[derive(Clone, Copy, Debug)]
+   |   ^^^^^^
+
+error: cannot find attribute `derive` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/critical-section-1.1.1/src/mutex.rs:52:3
+   |
+52 | #[derive(Debug)]
+   |   ^^^^^^
+
+error: cannot find macro `include_str` in this scope
+ --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/critical-section-1.1.1/src/lib.rs:2:10
+  |
+2 | #![doc = include_str!("../README.md")]
+  |          ^^^^^^^^^^^
+
+error[E0463]: can't find crate for `core`
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/void-1.0.2/src/lib.rs:16:5
+   |
+16 |     extern crate core;
+   |     ^^^^^^^^^^^^^^^^^^ can't find crate
+   |
+   = note: the `riscv32imc-unknown-none-elf` target may not be installed
+   = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+   = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error: cannot find attribute `derive` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/void-1.0.2/src/lib.rs:28:3
+   |
+28 | #[derive(Copy)]
+   |   ^^^^^^
+
+For more information about this error, try `rustc --explain E0463`.
+error[E0405]: cannot find trait `FnOnce` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/critical-section-1.1.1/src/mutex.rs:117:12
+    |
+117 |         F: FnOnce(&mut T) -> T,
+    |            ^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Default` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/critical-section-1.1.1/src/mutex.rs:151:9
+    |
+151 | impl<T: Default> Mutex<RefCell<T>> {
+    |         ^^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sync` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/critical-section-1.1.1/src/mutex.rs:170:16
+    |
+170 | unsafe impl<T> Sync for Mutex<T> where T: Send {}
+    |                ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Send` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/critical-section-1.1.1/src/mutex.rs:170:43
+    |
+170 | unsafe impl<T> Sync for Mutex<T> where T: Send {}
+    |                                           ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `FnOnce` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/critical-section-1.1.1/src/lib.rs:210:24
+    |
+210 | pub fn with<R>(f: impl FnOnce(CriticalSection) -> R) -> R {
+    |                        ^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Drop` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/critical-section-1.1.1/src/lib.rs:216:10
+    |
+216 |     impl Drop for Guard {
+    |          ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Clone` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/void-1.0.2/src/lib.rs:31:6
+   |
+31 | impl Clone for Void {
+   |      ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Option` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/void-1.0.2/src/lib.rs:56:37
+   |
+56 |     fn partial_cmp(&self, _: &T) -> Option<cmp::Ordering> {
+   |                                     ^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/void-1.0.2/src/lib.rs:85:29
+   |
+85 | pub trait ResultVoidExt<T>: Sized {
+   |                             ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Result` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/void-1.0.2/src/lib.rs:90:30
+   |
+90 | impl<T> ResultVoidExt<T> for Result<T, Void> {
+   |                              ^^^^^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Ok` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/void-1.0.2/src/lib.rs:97:13
+   |
+97 |             Ok(val) => val,
+   |             ^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Err` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/void-1.0.2/src/lib.rs:98:13
+   |
+98 |             Err(e) => unreachable(e)
+   |             ^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/void-1.0.2/src/lib.rs:104:32
+    |
+104 | pub trait ResultVoidErrExt<E>: Sized {
+    |                                ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Result` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/void-1.0.2/src/lib.rs:109:33
+    |
+109 | impl<E> ResultVoidErrExt<E> for Result<Void, E> {
+    |                                 ^^^^^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Ok` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/void-1.0.2/src/lib.rs:116:13
+    |
+116 |             Ok(v) => unreachable(v),
+    |             ^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/void-1.0.2/src/lib.rs:117:13
+    |
+117 |             Err(e) => e
+    |             ^^^ not found in this scope
+
+error: could not compile `bit_field` (lib) due to 15 previous errors
+error[E0405]: cannot find trait `Copy` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/vcell-0.1.3/src/lib.rs:31:18
+   |
+31 |         where T: Copy
+   |                  ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/vcell-0.1.3/src/lib.rs:39:18
+   |
+39 |         where T: Copy
+   |                  ^^^^ not found in this scope
+
+error: could not compile `bare-metal` (lib) due to 6 previous errors
+Some errors have detailed explanations: E0405, E0412, E0463, E0531.
+error[E0463]: can't find crate for `core`
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/lib.rs:59:11
+   |
+59 | pub use ::core as __core;
+   |           ^^^^ can't find crate
+   |
+   = note: the `riscv32imc-unknown-none-elf` target may not be installed
+   = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+   = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+ --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/no_uninit.rs:2:5
+  |
+2 | use core::num::{
+  |     ^^^^ can't find crate
+  |
+  = note: the `riscv32imc-unknown-none-elf` target may not be installed
+  = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+  = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error: could not compile `critical-section` (lib) due to 14 previous errors
+error[E0463]: can't find crate for `core`
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/lib.rs:53:5
+   |
+53 | use core::{marker::*, mem::*, num::*, ptr::*};
+   |     ^^^^ can't find crate
+   |
+   = note: the `riscv32imc-unknown-none-elf` target may not be installed
+   = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+   = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+ --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:8:5
+  |
+8 | use core::{marker::*, mem::*};
+  |     ^^^^ can't find crate
+  |
+  = note: the `riscv32imc-unknown-none-elf` target may not be installed
+  = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+  = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error: could not compile `vcell` (lib) due to 4 previous errors
+error: could not compile `void` (lib) due to 14 previous errors
+error[E0432]: unresolved imports `core::marker::*`, `core::mem::*`, `core::num::*`, `core::ptr::*`, `crate::Pod`, `crate::Zeroable`, `crate::AnyBitPattern`, `crate::NoUninit`, `crate::PodCastError`, `core::marker::*`, `core::mem::*`, `crate::Pod`
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/lib.rs:53:12
+   |
+53 | use core::{marker::*, mem::*, num::*, ptr::*};
+   |            ^^^^^^^^^  ^^^^^^  ^^^^^^  ^^^^^^
+   |
+  ::: /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/anybitpattern.rs:1:13
+   |
+1  | use crate::{Pod, Zeroable};
+   |             ^^^  ^^^^^^^^
+   |
+  ::: /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:6:3
+   |
+6  |   AnyBitPattern, NoUninit,
+   |   ^^^^^^^^^^^^^  ^^^^^^^^
+   |
+  ::: /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:7:5
+   |
+7  | use crate::PodCastError;
+   |     ^^^^^^^^^^^^^^^^^^^
+8  | use core::{marker::*, mem::*};
+   |            ^^^^^^^^^  ^^^^^^
+   |
+  ::: /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/no_uninit.rs:1:5
+   |
+1  | use crate::Pod;
+   |     ^^^^^^^^^^
+
+error: cannot find attribute `derive` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:211:3
+    |
+211 | #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+    |   ^^^^^^
+
+error: cannot find macro `write` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:229:5
+    |
+229 |     write!(f, "{:?}", self)
+    |     ^^^^^
+
+error: cannot find macro `panic` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:32:3
+   |
+32 |   panic!("{src}>{err}", src = _src, err = _err);
+   |   ^^^^^
+
+error: cannot find macro `unreachable` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:59:17
+   |
+59 |       Err(_) => unreachable!(),
+   |                 ^^^^^^^^^^^
+
+error: cannot find macro `unreachable` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:75:17
+   |
+75 |       Err(_) => unreachable!(),
+   |                 ^^^^^^^^^^^
+
+error: cannot find macro `unreachable` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:196:17
+    |
+196 |       Err(_) => unreachable!(),
+    |                 ^^^^^^^^^^^
+
+error: cannot find macro `unreachable` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:217:17
+    |
+217 |       Err(_) => unreachable!(),
+    |                 ^^^^^^^^^^^
+
+error: cannot find macro `assert` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/contiguous.rs:123:5
+    |
+123 |     assert!(size_of::<Self>() == size_of::<Self::Int>());
+    |     ^^^^^^
+
+error: cannot find macro `assert` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/contiguous.rs:159:5
+    |
+159 |     assert!(size_of::<Self>() == size_of::<Self::Int>());
+    |     ^^^^^^
+
+error: cannot find macro `assert` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/transparent.rs:144:7
+    |
+144 |       assert!(size_of::<*const Inner>() == size_of::<*const Self>());
+    |       ^^^^^^
+
+error: cannot find macro `assert` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/transparent.rs:162:7
+    |
+162 |       assert!(size_of::<*mut Inner>() == size_of::<*mut Self>());
+    |       ^^^^^^
+
+error: cannot find macro `assert` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/transparent.rs:183:7
+    |
+183 |       assert!(size_of::<*const Inner>() == size_of::<*const Self>());
+    |       ^^^^^^
+
+error: cannot find macro `assert` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/transparent.rs:184:7
+    |
+184 |       assert!(align_of::<*const Inner>() == align_of::<*const Self>());
+    |       ^^^^^^
+
+error: cannot find macro `assert` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/transparent.rs:200:7
+    |
+200 |       assert!(size_of::<*mut Inner>() == size_of::<*mut Self>());
+    |       ^^^^^^
+
+error: cannot find macro `assert` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/transparent.rs:201:7
+    |
+201 |       assert!(align_of::<*mut Inner>() == align_of::<*mut Self>());
+    |       ^^^^^^
+
+error: cannot find macro `assert` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/transparent.rs:223:7
+    |
+223 |       assert!(size_of::<*const Inner>() == size_of::<*const Self>());
+    |       ^^^^^^
+
+error: cannot find macro `assert` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/transparent.rs:241:7
+    |
+241 |       assert!(size_of::<*mut Inner>() == size_of::<*mut Self>());
+    |       ^^^^^^
+
+error: cannot find macro `assert` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/transparent.rs:262:7
+    |
+262 |       assert!(size_of::<*const Inner>() == size_of::<*const Self>());
+    |       ^^^^^^
+
+error: cannot find macro `assert` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/transparent.rs:263:7
+    |
+263 |       assert!(align_of::<*const Inner>() == align_of::<*const Self>());
+    |       ^^^^^^
+
+error: cannot find macro `assert` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/transparent.rs:279:7
+    |
+279 |       assert!(size_of::<*mut Inner>() == size_of::<*mut Self>());
+    |       ^^^^^^
+
+error: cannot find macro `assert` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/transparent.rs:280:7
+    |
+280 |       assert!(align_of::<*mut Inner>() == align_of::<*mut Self>());
+    |       ^^^^^^
+
+error: cannot find attribute `derive` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/lib.rs:135:3
+    |
+135 | #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+    |   ^^^^^^
+
+error: cannot find macro `write` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/lib.rs:159:5
+    |
+159 |     write!(f, "{:?}", self)
+    |     ^^^^^
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:157:5
+    |
+157 |     core::char::from_u32(*bits).is_some()
+    |     ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:195:3
+    |
+195 |   core::num::NonZeroU8: u8,
+    |   ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:186:13
+    |
+186 |             core::mem::size_of::<$nonzero>() == core::mem::size_of::<$primitive>()
+    |             ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:186:49
+    |
+186 |             core::mem::size_of::<$nonzero>() == core::mem::size_of::<$primitive>()
+    |                                                 ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:187:16
+    |
+187 |             && core::mem::align_of::<$nonzero>() == core::mem::align_of::<$primitive>();
+    |                ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:187:53
+    |
+187 |             && core::mem::align_of::<$nonzero>() == core::mem::align_of::<$primitive>();
+    |                                                     ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:196:3
+    |
+196 |   core::num::NonZeroI8: i8,
+    |   ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:197:3
+    |
+197 |   core::num::NonZeroU16: u16,
+    |   ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:198:3
+    |
+198 |   core::num::NonZeroI16: i16,
+    |   ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:199:3
+    |
+199 |   core::num::NonZeroU32: u32,
+    |   ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:200:3
+    |
+200 |   core::num::NonZeroI32: i32,
+    |   ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:201:3
+    |
+201 |   core::num::NonZeroU64: u64,
+    |   ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:202:3
+    |
+202 |   core::num::NonZeroI64: i64,
+    |   ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:203:3
+    |
+203 |   core::num::NonZeroI128: i128,
+    |   ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:204:3
+    |
+204 |   core::num::NonZeroU128: u128,
+    |   ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:205:3
+    |
+205 |   core::num::NonZeroUsize: usize,
+    |   ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:206:3
+    |
+206 |   core::num::NonZeroIsize: isize,
+    |   ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:227:6
+    |
+227 | impl core::fmt::Display for CheckedCastError {
+    |      ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:228:25
+    |
+228 |   fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+    |                         ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:228:50
+    |
+228 |   fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+    |                                                  ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/lib.rs:72:7
+   |
+72 |     ::core::mem::transmute_copy(&::core::mem::ManuallyDrop::new($val))
+   |       ^^^^ can't find crate
+   |
+   = note: the `riscv32imc-unknown-none-elf` target may not be installed
+   = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+   = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/lib.rs:72:36
+   |
+72 |     ::core::mem::transmute_copy(&::core::mem::ManuallyDrop::new($val))
+   |                                    ^^^^ can't find crate
+   |
+   = note: the `riscv32imc-unknown-none-elf` target may not be installed
+   = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+   = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:387:7
+    |
+387 |       core::slice::from_raw_parts(pod.as_ptr() as *const B, pod.len())
+    |       ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:409:7
+    |
+409 |       core::slice::from_raw_parts_mut(pod.as_mut_ptr() as *mut B, pod.len())
+    |       ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:26:39
+   |
+26 | pub(crate) fn something_went_wrong<D: core::fmt::Display>(
+   |                                       ^^^^ can't find crate
+   |
+   = note: the `riscv32imc-unknown-none-elf` target may not be installed
+   = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+   = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:57:35
+   |
+57 |     match try_cast_slice::<T, u8>(core::slice::from_ref(t)) {
+   |                                   ^^^^ can't find crate
+   |
+   = note: the `riscv32imc-unknown-none-elf` target may not be installed
+   = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+   = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:73:39
+   |
+73 |     match try_cast_slice_mut::<T, u8>(core::slice::from_mut(t)) {
+   |                                       ^^^^ can't find crate
+   |
+   = note: the `riscv32imc-unknown-none-elf` target may not be installed
+   = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+   = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:343:17
+    |
+343 |     Ok(unsafe { core::slice::from_raw_parts(a.as_ptr() as *const B, a.len()) })
+    |                 ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:346:13
+    |
+346 |   } else if core::mem::size_of_val(a) % size_of::<B>() == 0 {
+    |             ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:347:19
+    |
+347 |     let new_len = core::mem::size_of_val(a) / size_of::<B>();
+    |                   ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:348:17
+    |
+348 |     Ok(unsafe { core::slice::from_raw_parts(a.as_ptr() as *const B, new_len) })
+    |                 ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:370:7
+    |
+370 |       core::slice::from_raw_parts_mut(a.as_mut_ptr() as *mut B, a.len())
+    |       ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:374:13
+    |
+374 |   } else if core::mem::size_of_val(a) % size_of::<B>() == 0 {
+    |             ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:375:19
+    |
+375 |     let new_len = core::mem::size_of_val(a) / size_of::<B>();
+    |                   ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:377:7
+    |
+377 |       core::slice::from_raw_parts_mut(a.as_mut_ptr() as *mut B, new_len)
+    |       ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/zeroable.rs:33:14
+   |
+33 |     unsafe { core::mem::zeroed() }
+   |              ^^^^ can't find crate
+   |
+   = note: the `riscv32imc-unknown-none-elf` target may not be installed
+   = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+   = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/zeroable.rs:54:39
+   |
+54 | unsafe impl<T: Zeroable> Zeroable for core::cmp::Reverse<T> {}
+   |                                       ^^^^ can't find crate
+   |
+   = note: the `riscv32imc-unknown-none-elf` target may not be installed
+   = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+   = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/zeroable.rs:70:39
+   |
+70 | unsafe impl<T: Zeroable> Zeroable for core::cell::UnsafeCell<T> {}
+   |                                       ^^^^ can't find crate
+   |
+   = note: the `riscv32imc-unknown-none-elf` target may not be installed
+   = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+   = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/zeroable.rs:71:39
+   |
+71 | unsafe impl<T: Zeroable> Zeroable for core::cell::Cell<T> {}
+   |                                       ^^^^ can't find crate
+   |
+   = note: the `riscv32imc-unknown-none-elf` target may not be installed
+   = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+   = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/transparent.rs:187:7
+    |
+187 |       core::slice::from_raw_parts(s.as_ptr() as *const Self, s.len())
+    |       ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/transparent.rs:204:7
+    |
+204 |       core::slice::from_raw_parts_mut(s.as_mut_ptr() as *mut Self, s.len())
+    |       ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/transparent.rs:266:7
+    |
+266 |       core::slice::from_raw_parts(s.as_ptr() as *const Inner, s.len())
+    |       ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/transparent.rs:283:7
+    |
+283 |       core::slice::from_raw_parts_mut(s.as_mut_ptr() as *mut Inner, s.len())
+    |       ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/transparent.rs:288:42
+    |
+288 | unsafe impl<T> TransparentWrapper<T> for core::num::Wrapping<T> {}
+    |                                          ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/lib.rs:157:6
+    |
+157 | impl core::fmt::Display for PodCastError {
+    |      ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/lib.rs:158:25
+    |
+158 |   fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+    |                         ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0463]: can't find crate for `core`
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/lib.rs:158:50
+    |
+158 |   fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+    |                                                  ^^^^ can't find crate
+    |
+    = note: the `riscv32imc-unknown-none-elf` target may not be installed
+    = help: consider downloading the target with `rustup target add riscv32imc-unknown-none-elf`
+    = help: consider building the standard library from source with `cargo build -Zbuild-std`
+
+error[E0405]: cannot find trait `Sized` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/anybitpattern.rs:52:14
+   |
+52 |   Zeroable + Sized + Copy + 'static
+   |              ^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/anybitpattern.rs:52:22
+   |
+52 |   Zeroable + Sized + Copy + 'static
+   |                      ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:130:37
+    |
+130 | pub unsafe trait CheckedBitPattern: Copy {
+    |                                     ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `From` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:235:6
+    |
+235 | impl From<crate::PodCastError> for CheckedCastError {
+    |      ^^^^ not found in this scope
+
+error[E0412]: cannot find type `Result` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:251:6
+    |
+251 | ) -> Result<&T, CheckedCastError> {
+    |      ^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Result` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:271:6
+    |
+271 | ) -> Result<&mut T, CheckedCastError> {
+    |      ^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Result` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:289:6
+    |
+289 | ) -> Result<T, CheckedCastError> {
+    |      ^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Result` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:313:6
+    |
+313 | ) -> Result<B, CheckedCastError> {
+    |      ^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Result` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:333:6
+    |
+333 | ) -> Result<&B, CheckedCastError> {
+    |      ^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Result` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:352:6
+    |
+352 | ) -> Result<&mut B, CheckedCastError> {
+    |      ^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Result` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:382:6
+    |
+382 | ) -> Result<&[B], CheckedCastError> {
+    |      ^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Result` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:404:6
+    |
+404 | ) -> Result<&mut [B], CheckedCastError> {
+    |      ^^^^^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Ok` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:424:5
+    |
+424 |     Ok(t) => t,
+    |     ^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:425:5
+    |
+425 |     Err(e) => something_went_wrong("from_bytes", e),
+    |     ^^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Ok` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:437:5
+    |
+437 |     Ok(t) => t,
+    |     ^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:438:5
+    |
+438 |     Err(e) => something_went_wrong("from_bytes_mut", e),
+    |     ^^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Ok` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:449:5
+    |
+449 |     Ok(t) => t,
+    |     ^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:450:5
+    |
+450 |     Err(e) => something_went_wrong("pod_read_unaligned", e),
+    |     ^^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Ok` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:462:5
+    |
+462 |     Ok(t) => t,
+    |     ^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:463:5
+    |
+463 |     Err(e) => something_went_wrong("cast", e),
+    |     ^^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Ok` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:480:5
+    |
+480 |     Ok(t) => t,
+    |     ^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:481:5
+    |
+481 |     Err(e) => something_went_wrong("cast_mut", e),
+    |     ^^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Ok` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:493:5
+    |
+493 |     Ok(t) => t,
+    |     ^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:494:5
+    |
+494 |     Err(e) => something_went_wrong("cast_ref", e),
+    |     ^^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Ok` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:506:5
+    |
+506 |     Ok(t) => t,
+    |     ^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:507:5
+    |
+507 |     Err(e) => something_went_wrong("cast_slice", e),
+    |     ^^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Ok` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:524:5
+    |
+524 |     Ok(t) => t,
+    |     ^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:525:5
+    |
+525 |     Err(e) => something_went_wrong("cast_slice_mut", e),
+    |     ^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:53:34
+   |
+53 | pub(crate) unsafe fn bytes_of<T: Copy>(t: &T) -> &[u8] {
+   |                                  ^^^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Ok` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:58:7
+   |
+58 |       Ok(s) => s,
+   |       ^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Err` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:59:7
+   |
+59 |       Err(_) => unreachable!(),
+   |       ^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:69:38
+   |
+69 | pub(crate) unsafe fn bytes_of_mut<T: Copy>(t: &mut T) -> &mut [u8] {
+   |                                      ^^^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Ok` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:74:7
+   |
+74 |       Ok(s) => s,
+   |       ^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Err` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:75:7
+   |
+75 |       Err(_) => unreachable!(),
+   |       ^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:86:36
+   |
+86 | pub(crate) unsafe fn from_bytes<T: Copy>(s: &[u8]) -> &T {
+   |                                    ^^^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Ok` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:88:5
+   |
+88 |     Ok(t) => t,
+   |     ^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Err` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:89:5
+   |
+89 |     Err(e) => something_went_wrong("from_bytes", e),
+   |     ^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:99:40
+   |
+99 | pub(crate) unsafe fn from_bytes_mut<T: Copy>(s: &mut [u8]) -> &mut T {
+   |                                        ^^^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Ok` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:101:5
+    |
+101 |     Ok(t) => t,
+    |     ^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:102:5
+    |
+102 |     Err(e) => something_went_wrong("from_bytes_mut", e),
+    |     ^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:111:48
+    |
+111 | pub(crate) unsafe fn try_pod_read_unaligned<T: Copy>(
+    |                                                ^^^^ not found in this scope
+
+error[E0412]: cannot find type `Result` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:113:6
+    |
+113 | ) -> Result<T, PodCastError> {
+    |      ^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:126:44
+    |
+126 | pub(crate) unsafe fn pod_read_unaligned<T: Copy>(bytes: &[u8]) -> T {
+    |                                            ^^^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Ok` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:128:5
+    |
+128 |     Ok(t) => t,
+    |     ^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:129:5
+    |
+129 |     Err(e) => something_went_wrong("pod_read_unaligned", e),
+    |     ^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:140:40
+    |
+140 | pub(crate) unsafe fn try_from_bytes<T: Copy>(
+    |                                        ^^^^ not found in this scope
+
+error[E0412]: cannot find type `Result` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:142:6
+    |
+142 | ) -> Result<&T, PodCastError> {
+    |      ^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:159:44
+    |
+159 | pub(crate) unsafe fn try_from_bytes_mut<T: Copy>(
+    |                                            ^^^^ not found in this scope
+
+error[E0412]: cannot find type `Result` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:161:6
+    |
+161 | ) -> Result<&mut T, PodCastError> {
+    |      ^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:177:30
+    |
+177 | pub(crate) unsafe fn cast<A: Copy, B: Copy>(a: A) -> B {
+    |                              ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:177:39
+    |
+177 | pub(crate) unsafe fn cast<A: Copy, B: Copy>(a: A) -> B {
+    |                                       ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:191:34
+    |
+191 | pub(crate) unsafe fn cast_mut<A: Copy, B: Copy>(a: &mut A) -> &mut B {
+    |                                  ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:191:43
+    |
+191 | pub(crate) unsafe fn cast_mut<A: Copy, B: Copy>(a: &mut A) -> &mut B {
+    |                                           ^^^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Ok` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:195:7
+    |
+195 |       Ok(b) => b,
+    |       ^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:196:7
+    |
+196 |       Err(_) => unreachable!(),
+    |       ^^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Ok` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:200:7
+    |
+200 |       Ok(b) => b,
+    |       ^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:201:7
+    |
+201 |       Err(e) => something_went_wrong("cast_mut", e),
+    |       ^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:212:34
+    |
+212 | pub(crate) unsafe fn cast_ref<A: Copy, B: Copy>(a: &A) -> &B {
+    |                                  ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:212:43
+    |
+212 | pub(crate) unsafe fn cast_ref<A: Copy, B: Copy>(a: &A) -> &B {
+    |                                           ^^^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Ok` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:216:7
+    |
+216 |       Ok(b) => b,
+    |       ^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:217:7
+    |
+217 |       Err(_) => unreachable!(),
+    |       ^^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Ok` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:221:7
+    |
+221 |       Ok(b) => b,
+    |       ^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:222:7
+    |
+222 |       Err(e) => something_went_wrong("cast_ref", e),
+    |       ^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:233:36
+    |
+233 | pub(crate) unsafe fn cast_slice<A: Copy, B: Copy>(a: &[A]) -> &[B] {
+    |                                    ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:233:45
+    |
+233 | pub(crate) unsafe fn cast_slice<A: Copy, B: Copy>(a: &[A]) -> &[B] {
+    |                                             ^^^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Ok` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:235:5
+    |
+235 |     Ok(b) => b,
+    |     ^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:236:5
+    |
+236 |     Err(e) => something_went_wrong("cast_slice", e),
+    |     ^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:246:40
+    |
+246 | pub(crate) unsafe fn cast_slice_mut<A: Copy, B: Copy>(a: &mut [A]) -> &mut [B] {
+    |                                        ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:246:49
+    |
+246 | pub(crate) unsafe fn cast_slice_mut<A: Copy, B: Copy>(a: &mut [A]) -> &mut [B] {
+    |                                                 ^^^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Ok` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:248:5
+    |
+248 |     Ok(b) => b,
+    |     ^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:249:5
+    |
+249 |     Err(e) => something_went_wrong("cast_slice_mut", e),
+    |     ^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:264:34
+    |
+264 | pub(crate) unsafe fn try_cast<A: Copy, B: Copy>(
+    |                                  ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:264:43
+    |
+264 | pub(crate) unsafe fn try_cast<A: Copy, B: Copy>(
+    |                                           ^^^^ not found in this scope
+
+error[E0412]: cannot find type `Result` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:266:6
+    |
+266 | ) -> Result<B, PodCastError> {
+    |      ^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:281:38
+    |
+281 | pub(crate) unsafe fn try_cast_ref<A: Copy, B: Copy>(
+    |                                      ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:281:47
+    |
+281 | pub(crate) unsafe fn try_cast_ref<A: Copy, B: Copy>(
+    |                                               ^^^^ not found in this scope
+
+error[E0412]: cannot find type `Result` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:283:6
+    |
+283 | ) -> Result<&B, PodCastError> {
+    |      ^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:301:38
+    |
+301 | pub(crate) unsafe fn try_cast_mut<A: Copy, B: Copy>(
+    |                                      ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:301:47
+    |
+301 | pub(crate) unsafe fn try_cast_mut<A: Copy, B: Copy>(
+    |                                               ^^^^ not found in this scope
+
+error[E0412]: cannot find type `Result` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:303:6
+    |
+303 | ) -> Result<&mut B, PodCastError> {
+    |      ^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:333:40
+    |
+333 | pub(crate) unsafe fn try_cast_slice<A: Copy, B: Copy>(
+    |                                        ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:333:49
+    |
+333 | pub(crate) unsafe fn try_cast_slice<A: Copy, B: Copy>(
+    |                                                 ^^^^ not found in this scope
+
+error[E0412]: cannot find type `Result` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:335:6
+    |
+335 | ) -> Result<&[B], PodCastError> {
+    |      ^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:359:44
+    |
+359 | pub(crate) unsafe fn try_cast_slice_mut<A: Copy, B: Copy>(
+    |                                            ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:359:53
+    |
+359 | pub(crate) unsafe fn try_cast_slice_mut<A: Copy, B: Copy>(
+    |                                                     ^^^^ not found in this scope
+
+error[E0412]: cannot find type `Result` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:361:6
+    |
+361 | ) -> Result<&mut [B], PodCastError> {
+    |      ^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/zeroable.rs:25:28
+   |
+25 | pub unsafe trait Zeroable: Sized {
+   |                            ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Wrapping` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/zeroable.rs:53:39
+   |
+53 | unsafe impl<T: Zeroable> Zeroable for Wrapping<T> {}
+   |                                       ^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `PhantomData` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/zeroable.rs:67:37
+   |
+67 | unsafe impl<T: ?Sized> Zeroable for PhantomData<T> {}
+   |                                     ^^^^^^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/zeroable.rs:67:17
+   |
+67 | unsafe impl<T: ?Sized> Zeroable for PhantomData<T> {}
+   |                 ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `PhantomPinned` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/zeroable.rs:68:26
+   |
+68 | unsafe impl Zeroable for PhantomPinned {}
+   |                          ^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `ManuallyDrop` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/zeroable.rs:69:39
+   |
+69 | unsafe impl<T: Zeroable> Zeroable for ManuallyDrop<T> {}
+   |                                       ^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Option` in this scope
+ --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/zeroable_in_option.rs:4:47
+  |
+4 | unsafe impl<T: ZeroableInOption> Zeroable for Option<T> {}
+  |                                               ^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/zeroable_in_option.rs:13:36
+   |
+13 | pub unsafe trait ZeroableInOption: Sized {}
+   |                                    ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NonZeroI8` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/zeroable_in_option.rs:15:34
+   |
+15 | unsafe impl ZeroableInOption for NonZeroI8 {}
+   |                                  ^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NonZeroI16` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/zeroable_in_option.rs:16:34
+   |
+16 | unsafe impl ZeroableInOption for NonZeroI16 {}
+   |                                  ^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NonZeroI32` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/zeroable_in_option.rs:17:34
+   |
+17 | unsafe impl ZeroableInOption for NonZeroI32 {}
+   |                                  ^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NonZeroI64` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/zeroable_in_option.rs:18:34
+   |
+18 | unsafe impl ZeroableInOption for NonZeroI64 {}
+   |                                  ^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NonZeroI128` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/zeroable_in_option.rs:19:34
+   |
+19 | unsafe impl ZeroableInOption for NonZeroI128 {}
+   |                                  ^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NonZeroIsize` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/zeroable_in_option.rs:20:34
+   |
+20 | unsafe impl ZeroableInOption for NonZeroIsize {}
+   |                                  ^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NonZeroU8` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/zeroable_in_option.rs:21:34
+   |
+21 | unsafe impl ZeroableInOption for NonZeroU8 {}
+   |                                  ^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NonZeroU16` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/zeroable_in_option.rs:22:34
+   |
+22 | unsafe impl ZeroableInOption for NonZeroU16 {}
+   |                                  ^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NonZeroU32` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/zeroable_in_option.rs:23:34
+   |
+23 | unsafe impl ZeroableInOption for NonZeroU32 {}
+   |                                  ^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NonZeroU64` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/zeroable_in_option.rs:24:34
+   |
+24 | unsafe impl ZeroableInOption for NonZeroU64 {}
+   |                                  ^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NonZeroU128` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/zeroable_in_option.rs:25:34
+   |
+25 | unsafe impl ZeroableInOption for NonZeroU128 {}
+   |                                  ^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NonZeroUsize` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/zeroable_in_option.rs:26:34
+   |
+26 | unsafe impl ZeroableInOption for NonZeroUsize {}
+   |                                  ^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NonNull` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/zeroable_in_option.rs:29:45
+   |
+29 | unsafe impl<T: ?Sized> ZeroableInOption for NonNull<T> {}
+   |                                             ^^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/zeroable_in_option.rs:29:17
+   |
+29 | unsafe impl<T: ?Sized> ZeroableInOption for NonNull<T> {}
+   |                 ^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/zeroable_in_option.rs:30:17
+   |
+30 | unsafe impl<T: ?Sized> ZeroableInOption for &'_ T {}
+   |                 ^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/zeroable_in_option.rs:31:17
+   |
+31 | unsafe impl<T: ?Sized> ZeroableInOption for &'_ mut T {}
+   |                 ^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/pod.rs:37:34
+   |
+37 | pub unsafe trait Pod: Zeroable + Copy + 'static {}
+   |                                  ^^^^ not found in this scope
+
+error[E0412]: cannot find type `Wrapping` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/pod.rs:54:29
+   |
+54 | unsafe impl<T: Pod> Pod for Wrapping<T> {}
+   |                             ^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `PhantomData` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/pod.rs:63:29
+   |
+63 | unsafe impl<T: Pod> Pod for PhantomData<T> {}
+   |                             ^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `PhantomPinned` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/pod.rs:64:21
+   |
+64 | unsafe impl Pod for PhantomPinned {}
+   |                     ^^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `ManuallyDrop` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/pod.rs:65:29
+   |
+65 | unsafe impl<T: Pod> Pod for ManuallyDrop<T> {}
+   |                             ^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Option` in this scope
+ --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/pod_in_option.rs:4:37
+  |
+4 | unsafe impl<T: PodInOption> Pod for Option<T> {}
+  |                                     ^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/pod_in_option.rs:14:50
+   |
+14 | pub unsafe trait PodInOption: ZeroableInOption + Copy + 'static {}
+   |                                                  ^^^^ not found in this scope
+
+error[E0412]: cannot find type `NonZeroI8` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/pod_in_option.rs:16:29
+   |
+16 | unsafe impl PodInOption for NonZeroI8 {}
+   |                             ^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NonZeroI16` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/pod_in_option.rs:17:29
+   |
+17 | unsafe impl PodInOption for NonZeroI16 {}
+   |                             ^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NonZeroI32` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/pod_in_option.rs:18:29
+   |
+18 | unsafe impl PodInOption for NonZeroI32 {}
+   |                             ^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NonZeroI64` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/pod_in_option.rs:19:29
+   |
+19 | unsafe impl PodInOption for NonZeroI64 {}
+   |                             ^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NonZeroI128` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/pod_in_option.rs:20:29
+   |
+20 | unsafe impl PodInOption for NonZeroI128 {}
+   |                             ^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NonZeroIsize` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/pod_in_option.rs:21:29
+   |
+21 | unsafe impl PodInOption for NonZeroIsize {}
+   |                             ^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NonZeroU8` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/pod_in_option.rs:22:29
+   |
+22 | unsafe impl PodInOption for NonZeroU8 {}
+   |                             ^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NonZeroU16` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/pod_in_option.rs:23:29
+   |
+23 | unsafe impl PodInOption for NonZeroU16 {}
+   |                             ^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NonZeroU32` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/pod_in_option.rs:24:29
+   |
+24 | unsafe impl PodInOption for NonZeroU32 {}
+   |                             ^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NonZeroU64` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/pod_in_option.rs:25:29
+   |
+25 | unsafe impl PodInOption for NonZeroU64 {}
+   |                             ^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NonZeroU128` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/pod_in_option.rs:26:29
+   |
+26 | unsafe impl PodInOption for NonZeroU128 {}
+   |                             ^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NonZeroUsize` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/pod_in_option.rs:27:29
+   |
+27 | unsafe impl PodInOption for NonZeroUsize {}
+   |                             ^^^^^^^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/no_uninit.rs:61:28
+   |
+61 | pub unsafe trait NoUninit: Sized + Copy + 'static {}
+   |                            ^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/no_uninit.rs:61:36
+   |
+61 | pub unsafe trait NoUninit: Sized + Copy + 'static {}
+   |                                    ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/contiguous.rs:78:30
+   |
+78 | pub unsafe trait Contiguous: Copy + 'static {
+   |                              ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/contiguous.rs:96:13
+   |
+96 |   type Int: Copy + Ord;
+   |             ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Ord` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/contiguous.rs:96:20
+   |
+96 |   type Int: Copy + Ord;
+   |                    ^^^ not found in this scope
+
+error[E0412]: cannot find type `Option` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/contiguous.rs:119:40
+    |
+119 |   fn from_integer(value: Self::Int) -> Option<Self> {
+    |                                        ^^^^^^ not found in this scope
+
+error[E0425]: cannot find value `None` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/contiguous.rs:134:7
+    |
+134 |       None
+    |       ^^^^ not found in this scope
+
+error[E0412]: cannot find type `NonZeroU8` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/contiguous.rs:196:3
+    |
+196 |   NonZeroU8 as u8 in [1, u8::max_value()];
+    |   ^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NonZeroU16` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/contiguous.rs:197:3
+    |
+197 |   NonZeroU16 as u16 in [1, u16::max_value()];
+    |   ^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NonZeroU32` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/contiguous.rs:198:3
+    |
+198 |   NonZeroU32 as u32 in [1, u32::max_value()];
+    |   ^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NonZeroU64` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/contiguous.rs:199:3
+    |
+199 |   NonZeroU64 as u64 in [1, u64::max_value()];
+    |   ^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NonZeroU128` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/contiguous.rs:200:3
+    |
+200 |   NonZeroU128 as u128 in [1, u128::max_value()];
+    |   ^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NonZeroUsize` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/contiguous.rs:201:3
+    |
+201 |   NonZeroUsize as usize in [1, usize::max_value()];
+    |   ^^^^^^^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/transparent.rs:126:45
+    |
+126 | pub unsafe trait TransparentWrapper<Inner: ?Sized> {
+    |                                             ^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/transparent.rs:131:11
+    |
+131 |     Self: Sized,
+    |           ^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/transparent.rs:132:12
+    |
+132 |     Inner: Sized,
+    |            ^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/transparent.rs:179:11
+    |
+179 |     Self: Sized,
+    |           ^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/transparent.rs:180:12
+    |
+180 |     Inner: Sized,
+    |            ^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/transparent.rs:196:11
+    |
+196 |     Self: Sized,
+    |           ^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/transparent.rs:197:12
+    |
+197 |     Inner: Sized,
+    |            ^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/transparent.rs:212:11
+    |
+212 |     Self: Sized,
+    |           ^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/transparent.rs:213:12
+    |
+213 |     Inner: Sized,
+    |            ^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/transparent.rs:258:11
+    |
+258 |     Self: Sized,
+    |           ^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/transparent.rs:259:12
+    |
+259 |     Inner: Sized,
+    |            ^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/transparent.rs:275:11
+    |
+275 |     Self: Sized,
+    |           ^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/transparent.rs:276:12
+    |
+276 |     Inner: Sized,
+    |            ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Result` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/lib.rs:210:6
+    |
+210 | ) -> Result<T, PodCastError> {
+    |      ^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Result` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/lib.rs:230:54
+    |
+230 | pub fn try_from_bytes<T: AnyBitPattern>(s: &[u8]) -> Result<&T, PodCastError> {
+    |                                                      ^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Result` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/lib.rs:243:6
+    |
+243 | ) -> Result<&mut T, PodCastError> {
+    |      ^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Result` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/lib.rs:336:6
+    |
+336 | ) -> Result<B, PodCastError> {
+    |      ^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Result` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/lib.rs:349:6
+    |
+349 | ) -> Result<&B, PodCastError> {
+    |      ^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Result` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/lib.rs:362:6
+    |
+362 | ) -> Result<&mut B, PodCastError> {
+    |      ^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Result` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/lib.rs:384:6
+    |
+384 | ) -> Result<&[B], PodCastError> {
+    |      ^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Result` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/lib.rs:398:6
+    |
+398 | ) -> Result<&mut [B], PodCastError> {
+    |      ^^^^^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Ok` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:255:5
+    |
+255 |     Ok(unsafe { &*(pod as *const <T as CheckedBitPattern>::Bits as *const T) })
+    |     ^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:257:5
+    |
+257 |     Err(CheckedCastError::InvalidBitPattern)
+    |     ^^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Ok` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:275:5
+    |
+275 |     Ok(unsafe { &mut *(pod as *mut <T as CheckedBitPattern>::Bits as *mut T) })
+    |     ^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:277:5
+    |
+277 |     Err(CheckedCastError::InvalidBitPattern)
+    |     ^^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Ok` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:293:5
+    |
+293 |     Ok(unsafe { transmute!(pod) })
+    |     ^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:295:5
+    |
+295 |     Err(CheckedCastError::InvalidBitPattern)
+    |     ^^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Ok` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:317:5
+    |
+317 |     Ok(unsafe { transmute!(pod) })
+    |     ^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:319:5
+    |
+319 |     Err(CheckedCastError::InvalidBitPattern)
+    |     ^^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Ok` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:337:5
+    |
+337 |     Ok(unsafe { &*(pod as *const <B as CheckedBitPattern>::Bits as *const B) })
+    |     ^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:339:5
+    |
+339 |     Err(CheckedCastError::InvalidBitPattern)
+    |     ^^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Ok` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:356:5
+    |
+356 |     Ok(unsafe { &mut *(pod as *mut <B as CheckedBitPattern>::Bits as *mut B) })
+    |     ^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:358:5
+    |
+358 |     Err(CheckedCastError::InvalidBitPattern)
+    |     ^^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Ok` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:386:5
+    |
+386 |     Ok(unsafe {
+    |     ^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:390:5
+    |
+390 |     Err(CheckedCastError::InvalidBitPattern)
+    |     ^^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Ok` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:408:5
+    |
+408 |     Ok(unsafe {
+    |     ^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/checked.rs:412:5
+    |
+412 |     Err(CheckedCastError::InvalidBitPattern)
+    |     ^^^ not found in this scope
+
+error[E0425]: cannot find function `size_of` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:54:6
+   |
+54 |   if size_of::<T>() == 0 {
+   |      ^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `size_of` in this scope
+  --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:70:6
+   |
+70 |   if size_of::<T>() == 0 {
+   |      ^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `size_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:114:21
+    |
+114 |   if bytes.len() != size_of::<T>() {
+    |                     ^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:115:5
+    |
+115 |     Err(PodCastError::SizeMismatch)
+    |     ^^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Ok` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:117:5
+    |
+117 |     Ok(unsafe { (bytes.as_ptr() as *const T).read_unaligned() })
+    |     ^^ not found in this scope
+
+error[E0425]: cannot find function `size_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:143:17
+    |
+143 |   if s.len() != size_of::<T>() {
+    |                 ^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:144:5
+    |
+144 |     Err(PodCastError::SizeMismatch)
+    |     ^^^ not found in this scope
+
+error[E0425]: cannot find function `align_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:145:37
+    |
+145 |   } else if (s.as_ptr() as usize) % align_of::<T>() != 0 {
+    |                                     ^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:146:5
+    |
+146 |     Err(PodCastError::TargetAlignmentGreaterAndInputNotAligned)
+    |     ^^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Ok` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:148:5
+    |
+148 |     Ok(unsafe { &*(s.as_ptr() as *const T) })
+    |     ^^ not found in this scope
+
+error[E0425]: cannot find function `size_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:162:17
+    |
+162 |   if s.len() != size_of::<T>() {
+    |                 ^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:163:5
+    |
+163 |     Err(PodCastError::SizeMismatch)
+    |     ^^^ not found in this scope
+
+error[E0425]: cannot find function `align_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:164:37
+    |
+164 |   } else if (s.as_ptr() as usize) % align_of::<T>() != 0 {
+    |                                     ^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:165:5
+    |
+165 |     Err(PodCastError::TargetAlignmentGreaterAndInputNotAligned)
+    |     ^^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Ok` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:167:5
+    |
+167 |     Ok(unsafe { &mut *(s.as_mut_ptr() as *mut T) })
+    |     ^^ not found in this scope
+
+error[E0425]: cannot find function `size_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:178:6
+    |
+178 |   if size_of::<A>() == size_of::<B>() {
+    |      ^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `size_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:178:24
+    |
+178 |   if size_of::<A>() == size_of::<B>() {
+    |                        ^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `size_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:192:6
+    |
+192 |   if size_of::<A>() == size_of::<B>() && align_of::<A>() >= align_of::<B>() {
+    |      ^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `size_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:192:24
+    |
+192 |   if size_of::<A>() == size_of::<B>() && align_of::<A>() >= align_of::<B>() {
+    |                        ^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `align_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:192:42
+    |
+192 |   if size_of::<A>() == size_of::<B>() && align_of::<A>() >= align_of::<B>() {
+    |                                          ^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `align_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:192:61
+    |
+192 |   if size_of::<A>() == size_of::<B>() && align_of::<A>() >= align_of::<B>() {
+    |                                                             ^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `size_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:213:6
+    |
+213 |   if size_of::<A>() == size_of::<B>() && align_of::<A>() >= align_of::<B>() {
+    |      ^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `size_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:213:24
+    |
+213 |   if size_of::<A>() == size_of::<B>() && align_of::<A>() >= align_of::<B>() {
+    |                        ^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `align_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:213:42
+    |
+213 |   if size_of::<A>() == size_of::<B>() && align_of::<A>() >= align_of::<B>() {
+    |                                          ^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `align_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:213:61
+    |
+213 |   if size_of::<A>() == size_of::<B>() && align_of::<A>() >= align_of::<B>() {
+    |                                                             ^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `size_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:267:6
+    |
+267 |   if size_of::<A>() == size_of::<B>() {
+    |      ^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `size_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:267:24
+    |
+267 |   if size_of::<A>() == size_of::<B>() {
+    |                        ^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Ok` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:268:5
+    |
+268 |     Ok(unsafe { transmute!(a) })
+    |     ^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:270:5
+    |
+270 |     Err(PodCastError::SizeMismatch)
+    |     ^^^ not found in this scope
+
+error[E0425]: cannot find function `align_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:286:6
+    |
+286 |   if align_of::<B>() > align_of::<A>()
+    |      ^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `align_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:286:24
+    |
+286 |   if align_of::<B>() > align_of::<A>()
+    |                        ^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `align_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:287:35
+    |
+287 |     && (a as *const A as usize) % align_of::<B>() != 0
+    |                                   ^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:289:5
+    |
+289 |     Err(PodCastError::TargetAlignmentGreaterAndInputNotAligned)
+    |     ^^^ not found in this scope
+
+error[E0425]: cannot find function `size_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:290:13
+    |
+290 |   } else if size_of::<B>() == size_of::<A>() {
+    |             ^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `size_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:290:31
+    |
+290 |   } else if size_of::<B>() == size_of::<A>() {
+    |                               ^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Ok` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:291:5
+    |
+291 |     Ok(unsafe { &*(a as *const A as *const B) })
+    |     ^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:293:5
+    |
+293 |     Err(PodCastError::SizeMismatch)
+    |     ^^^ not found in this scope
+
+error[E0425]: cannot find function `align_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:306:6
+    |
+306 |   if align_of::<B>() > align_of::<A>()
+    |      ^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `align_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:306:24
+    |
+306 |   if align_of::<B>() > align_of::<A>()
+    |                        ^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `align_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:307:33
+    |
+307 |     && (a as *mut A as usize) % align_of::<B>() != 0
+    |                                 ^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:309:5
+    |
+309 |     Err(PodCastError::TargetAlignmentGreaterAndInputNotAligned)
+    |     ^^^ not found in this scope
+
+error[E0425]: cannot find function `size_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:310:13
+    |
+310 |   } else if size_of::<B>() == size_of::<A>() {
+    |             ^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `size_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:310:31
+    |
+310 |   } else if size_of::<B>() == size_of::<A>() {
+    |                               ^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Ok` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:311:5
+    |
+311 |     Ok(unsafe { &mut *(a as *mut A as *mut B) })
+    |     ^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:313:5
+    |
+313 |     Err(PodCastError::SizeMismatch)
+    |     ^^^ not found in this scope
+
+error[E0425]: cannot find function `align_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:338:6
+    |
+338 |   if align_of::<B>() > align_of::<A>()
+    |      ^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `align_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:338:24
+    |
+338 |   if align_of::<B>() > align_of::<A>()
+    |                        ^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `align_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:339:32
+    |
+339 |     && (a.as_ptr() as usize) % align_of::<B>() != 0
+    |                                ^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:341:5
+    |
+341 |     Err(PodCastError::TargetAlignmentGreaterAndInputNotAligned)
+    |     ^^^ not found in this scope
+
+error[E0425]: cannot find function `size_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:342:13
+    |
+342 |   } else if size_of::<B>() == size_of::<A>() {
+    |             ^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `size_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:342:31
+    |
+342 |   } else if size_of::<B>() == size_of::<A>() {
+    |                               ^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Ok` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:343:5
+    |
+343 |     Ok(unsafe { core::slice::from_raw_parts(a.as_ptr() as *const B, a.len()) })
+    |     ^^ not found in this scope
+
+error[E0425]: cannot find function `size_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:344:13
+    |
+344 |   } else if size_of::<A>() == 0 || size_of::<B>() == 0 {
+    |             ^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `size_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:344:36
+    |
+344 |   } else if size_of::<A>() == 0 || size_of::<B>() == 0 {
+    |                                    ^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:345:5
+    |
+345 |     Err(PodCastError::SizeMismatch)
+    |     ^^^ not found in this scope
+
+error[E0425]: cannot find function `size_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:346:41
+    |
+346 |   } else if core::mem::size_of_val(a) % size_of::<B>() == 0 {
+    |                                         ^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `size_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:347:47
+    |
+347 |     let new_len = core::mem::size_of_val(a) / size_of::<B>();
+    |                                               ^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Ok` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:348:5
+    |
+348 |     Ok(unsafe { core::slice::from_raw_parts(a.as_ptr() as *const B, new_len) })
+    |     ^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:350:5
+    |
+350 |     Err(PodCastError::OutputSliceWouldHaveSlop)
+    |     ^^^ not found in this scope
+
+error[E0425]: cannot find function `align_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:364:6
+    |
+364 |   if align_of::<B>() > align_of::<A>()
+    |      ^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `align_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:364:24
+    |
+364 |   if align_of::<B>() > align_of::<A>()
+    |                        ^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `align_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:365:36
+    |
+365 |     && (a.as_mut_ptr() as usize) % align_of::<B>() != 0
+    |                                    ^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:367:5
+    |
+367 |     Err(PodCastError::TargetAlignmentGreaterAndInputNotAligned)
+    |     ^^^ not found in this scope
+
+error[E0425]: cannot find function `size_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:368:13
+    |
+368 |   } else if size_of::<B>() == size_of::<A>() {
+    |             ^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `size_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:368:31
+    |
+368 |   } else if size_of::<B>() == size_of::<A>() {
+    |                               ^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Ok` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:369:5
+    |
+369 |     Ok(unsafe {
+    |     ^^ not found in this scope
+
+error[E0425]: cannot find function `size_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:372:13
+    |
+372 |   } else if size_of::<A>() == 0 || size_of::<B>() == 0 {
+    |             ^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `size_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:372:36
+    |
+372 |   } else if size_of::<A>() == 0 || size_of::<B>() == 0 {
+    |                                    ^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:373:5
+    |
+373 |     Err(PodCastError::SizeMismatch)
+    |     ^^^ not found in this scope
+
+error[E0425]: cannot find function `size_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:374:41
+    |
+374 |   } else if core::mem::size_of_val(a) % size_of::<B>() == 0 {
+    |                                         ^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function `size_of` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:375:47
+    |
+375 |     let new_len = core::mem::size_of_val(a) / size_of::<B>();
+    |                                               ^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Ok` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:376:5
+    |
+376 |     Ok(unsafe {
+    |     ^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Err` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/internal.rs:380:5
+    |
+380 |     Err(PodCastError::OutputSliceWouldHaveSlop)
+    |     ^^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Some` in this scope
+   --> /home/sladekm/.cargo/registry/src/index.crates.io-6f17d22bba15001f/bytemuck-1.13.1/src/contiguous.rs:132:7
+    |
+132 |       Some(unsafe { transmute!(value) })
+    |       ^^^^ not found in this scope
+
+Some errors have detailed explanations: E0405, E0412, E0425, E0432, E0463, E0531.
+error: could not compile `bytemuck` (lib) due to 330 previous errors
